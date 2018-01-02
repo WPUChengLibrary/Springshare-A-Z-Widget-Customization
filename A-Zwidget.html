@@ -1,0 +1,386 @@
+<!--- LibGuides/SpringShare A-Z List widget customization --->
+<!--- Updated 1/2/2018 --->
+<!-- Please report any bugs to Tony Joachim (joachima1@wpunj.edu) -->
+
+
+      <!--- BEGIN Styling --->
+      <!--- Styles will vary, based on your site's existing CSS --->
+
+          <style>
+              #limiterbar {background-color: #F8F8F8; width: 100%; padding: 10px 0px; border: 1px solid #E7E7E7; text-align: center; border-radius: 5px; margin-bottom: 10px;}
+              #limiterbar select, #limiterbar input {padding: 5px 7px; border-radius: 5px; border: 1px solid #B6B6B6;}
+              #showlimiter {margin: 25 0 10 0; display: none;}
+              #showlimiter button {font-size: 8pt; padding: 10px; background-color: #FFFFFF; border: 1px solid #E7E7E7; display: inline-block; border-radius: 5px;}
+              #showlimiter button:hover {background-color: #E6E6E6; cursor: pointer;}
+              #alphabuttons {width: 100%; text-align: center; padding-bottom: 15px;}
+              .clickme {margin: 1px; cursor: pointer; border: 0px; background-color: transparent; padding: 3px; text-decoration: none; font-size: 10pt; color: black;}
+              .clickme:hover {text-decoration: underline;}
+              #s-lg-widget-1485193794129 li {border: 1px solid grey; background: none; background-color: #D7D7D7; padding: 0px; padding-top: 7px; font-size: large; margin-top: 20px; font-weight: bold; padding-left: 7px;}  
+              #s-lg-widget-1485193794129 li > a {font-size: large; padding: 0px 10px; border 1px solid grey; color: #365b8f; text-decoration: none; display: block; margin-left: -9px;}
+              #s-lg-widget-1485193794129 li a:hover {color: orange;}
+              .s-lg-guide-list-info {background-color: white; padding: 7px; font-size: 10pt; margin-top: 7px; font-weight: normal; margin-left: -7px;}
+              /* add a div around the li a to add box behind text; display as block; */
+              .s-lg-az-result-badge-trial, .label-info {display: none;}
+              #s-lg-widget-list-info {padding-top: 15px;}
+              #s-lg-widget-1485193794129 .otherlinks {width: 100%; text-align: right; font-size: 9pt;}
+              span.s-lg-az-result-badge-featured {display: none;}
+          </style>
+      <!--- END Styling --->
+
+
+
+      <!--- Page Header --->
+
+      <h5 style="margin-bottom: 0px;">Search for databases by subject or keyword.</h5>
+      <p style="margin: 0px; padding-top: 0px; font-size: 8pt;">Not sure of where to get started? Try one of our <a href="http://www.wpunj.edu/library/databases.html?f=130152" >general knowledge databases</a>!</p>
+
+
+
+      <!--- BEGIN #limiterbar container --->
+
+      <!--- Holds various limiting options for customizing content search/filtering --->
+      <!--- #limiterbar contains three search options:  a dropdown by subject, keyword search, and alphabetical limiter --->
+
+          <div id="limiterbar">
+
+
+          
+          <!--- BEGIN Subject dropdown --->
+
+          <!--- First section refers to *existing* LibGuides Subject categories --->
+          <!--- In order for databases to appear, the Subject must have at least one database associated with it --->
+          <!--- This section must be manually created and maintained, using the Subject IDs from Springshare --->
+                <!--- In the administrative mode of LibGuides, select Admin > Metadata & URLs to find Subjects and associated IDs --->
+                <!--- Leave out (or comment out) any LibGuide subjects that you do not want displayed --->
+
+              <div id="ddmenu" style="width: 48%; display: inline-block; text-align: center; padding: 0px 25px;">
+              <!--- Subject Dropdown menu --->
+              <form method="GET"> 
+                      <select name="gourl" id="selectID" style="font-size: 10pt; width: 100%;"> 
+                        <option>All Subjects</option>
+                        <option value="130152">General Knowledge Databases</option>
+                        <option value="73649">Africana-World Studies</option>
+                        <option value="73650">Anthropology</option>
+                        <option value="73636">Art</option>
+                        <option value="73634">Asian Studies</option>
+                        <option value="73642">Biology</option>
+                        <option value="73640">Business</option>
+                        <option value="73643">Chemistry</option>
+                        <option value="73633">Communication</option>
+                        <option value="73663">Communication Disorders</option>
+                        <option value="73644">Computer Science</option>
+                        <option value="73670">Criminal Justice</option>
+                        <option value="73641">Economics, Finance, and Global Business</option>
+                        <option value="73638">Education Research</option>
+                        <option value="130154">Education, Elementary K-8</option>
+                        <option value="130155">Education, Middle & Secondary 6-12</option>
+                        <option value="73666">Educational Leadership and Professional Studies</option>
+                        <option value="73651">English</option>
+                        <option value="73645">Environmental Science</option>
+                        <option value="73652">Geography</option>
+                        <option value="73668">Graduate Theses</option>
+                        <option value="73635">History</option>
+                        <option value="73646">Kinesiology</option>
+                        <option value="73654">Languages &amp; Cultures</option>
+                        <option value="73655">Latin American &amp; Latino Studies</option>
+                        <option value="105193">Law and Legal Studies</option>
+                        <option value="80541">Liberal Studies</option>
+                        <option value="73667">Library</option>
+                        <option value="73665">Marketing and Management</option>
+                        <option value="73647">Mathematics</option>
+                        <option value="73637">Music</option>
+                        <option value="105192">News</option>
+                        <option value="73648">Nursing</option>
+                        <option value="73658">Philosophy</option>
+                        <option value="73656">Physics</option>
+                        <option value="73659">Political Science</option>
+                        <option value="73660">Psychology</option>
+                        <option value="73657">Public Health</option>
+                        <option value="73661">Sociology</option>
+                        <option value="73664">Special Education and Counseling</option>
+                        <option value="105194">Statistics</option>
+                        <option value="73653">Urban Studies</option>
+                        <option value="73662">Women's and Gender Studies</option>
+                      </select>
+                      <!--- No button is required.  Script will trigger page redirect when selection made --->
+                      <!---<input type="submit" value="Go"/>--->
+                </form>
+              </div>
+
+          <!--- END Subject dropdown --->
+
+
+
+          <!--- BEGIN Keyword Search --->    
+
+          <!--- The second section provides a keyword search option, which looks at the title and description of the database --->
+          <!--- This does not take the Subject into account. --->
+
+              <div id="kwsearch" style="width: 48%; display: inline-block; text-align: center; padding: 0px 25px;">
+              <!--- Keyword section --->
+              <form method="GET" action="http://www.wpunj.edu/library/databases.html">
+                  <input name="q" type="search" id="keywords" placeholder="Search for Databases" style="width: 100%;" />
+
+                  <!--- No button is required.  Simply press enter to submit. --->
+                  <!---<button type="submit">Search</button>--->
+              </form> 
+              </div>    
+
+          <!--- END Keyword Search --->
+
+      </div>
+
+
+
+    <!--- BEGIN Alphabetical Links --->
+
+    <!--- Spans the entire width underneath the #limiterbar --->
+    <!--- Selecting link shows only databases beginning with that letter, when page reloaded --->
+    <!--- This section only needs to be set up once --->
+
+       <div id="alphabuttons">
+            <a href="http://www.wpunj.edu/library/databases.html" class="clickme">ALL</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=a" class="clickme">A</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=b" class="clickme">B</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=c" class="clickme">C</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=d" class="clickme">D</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=e" class="clickme">E</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=f" class="clickme">F</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=g" class="clickme">G</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=h" class="clickme">H</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=i" class="clickme">I</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=j" class="clickme">J</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=k" class="clickme">K</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=l" class="clickme">L</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=m" class="clickme">M</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=n" class="clickme">N</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=o" class="clickme">O</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=p" class="clickme">P</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=q" class="clickme">Q</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=r" class="clickme">R</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=s" class="clickme">S</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=t" class="clickme">T</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=u" class="clickme">U</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=v" class="clickme">V</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=w" class="clickme">W</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=x" class="clickme">X</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=y" class="clickme">Y</a>
+            <a href="http://www.wpunj.edu/library/databases.html?a=z" class="clickme">Z</a>
+        </div>
+
+    <!--- BEGIN Alphabetical Links --->
+
+
+
+
+    <!--- RESULTS SECTION --->
+
+    <!--- Following a search, the #showlimiter section will be displayed --->
+    <!--- Shows applied limits and button to clear all filters --->
+
+          <div id="showlimiter">
+              <form method="GET" action="http://www.wpunj.edu/library/databases.html">
+              <p style="font-weight: bold; display: inline-block;">Databases found for <span id="kwdisplay"></span></p>
+              <button style="display: inline-block;">Clear Filters/Browse All Databases</button>
+              </form>
+          </div>
+
+
+
+    <!--- BEGIN LibGuides A-Z Widget --->
+
+    <!--- Some scripts and styles must be loaded AFTER the widget in order to be applied properly --->
+    <!--- In the administrative mode of LibGuides, select Tools > Widgets, then A-Z List tab --->
+    <!--- Change site_id=915 with your own institutional ID. --->
+
+          <script src="//lgapi-us.libapps.com/sa.php?site_id=915"></script>
+
+          <script>springshare_widget_config_1485193794129 = { path: 'assets' };</script>
+
+          <div id="s-lg-widget-1485193794129"></div>
+
+          <script>
+              $(function(){
+                // bind change event to select
+                $('#selectID').on('change', function () {
+                    var url = "http://www.wpunj.edu/library/databases.html?f="+$(this).val(); // get selected value
+                    if (url) { // require a URL
+                        window.location = url; // redirect
+                    }
+                    return false;
+                });
+              });
+          </script>
+
+    <!--- END LibGuides A-Z Widget --->
+
+
+
+    <!--- BEGIN ADDITIONAL LIMITER SCRIPTING --->
+
+    <!--- The following scripts enhance the functionality of this page --->
+
+          <script>
+
+          // dotCMS does not inherently allow pages to use variables in the URL string.
+          // this allows us to reference variables in the URL using getUrlParameter (below)
+
+              function getUrlParameter(name) {
+                  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                  var results = regex.exec(location.search);
+                  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+              };
+
+          // defines keyword, alphabetical, or subject limiters for use by page
+              
+              m = getUrlParameter('q'); // "keywords"
+              kw = getUrlParameter('f'); // "subject id"
+              alph = getUrlParameter('a'); // first letter
+              alph = alph.toUpperCase();
+              
+              dbcount = 0;
+              
+              
+          // sets up 'insert' variable and displays in header and #showlimiter sections, as appropriate.
+
+              if ( kw !== ''){
+              // formats the variable to attach to URL.
+              
+                  insert = "&subject_ids%5B0%5D="+kw;
+                  $( '#showlimiter' ).css( "display", "inline" );
+                  // alert(insert); // Testing purposes.
+             
+              // finds name of subject to include as header in #blah
+              // compares subject_ids to select > option, to find the text in the dropdown.
+
+                  $("#selectID > option").each(function() {
+                     if (this.value === kw) { 
+                          // alert(this.value+" "+this.text); // Testing purposes.
+                          $('#blah').html(': '+this.text);
+                          $('#kwdisplay').html(this.text);
+                          $(this).prop('selected', true);
+                      }
+                  });
+              } else {
+                  insert = "";
+              };
+
+          // Adds the keyword into the div #blah.
+
+              if ( m !== '' ){
+                  insert = "&search_terms="+m;
+                  // alert(insert); // Testing purposes.
+                  $('#kwdisplay').html(m);
+                  $( '#showlimiter' ).css( "display", "inline" );
+                  
+              };
+
+          // Adds 'insert' variable (defined above) to the end of the widget code, when reloading the page.
+          // Only able to use one limiter at a time.
+          /* HIDE TITLES if start with letter different from selected */
+
+          !function(d,s,id){
+              var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+              if(!d.getElementById(id)){
+                  js=d.createElement(s);
+                  js.id=id;js.src=p+"://lgapi-us.libapps.com/widgets.php?site_id=915&widget_type=2&search_terms=&search_match=2&subject_ids=&sort_by=name&list_format=1&drop_text=Select+a+Database...&output_format=1&load_type=2&enable_description=1&widget_title=A-Z+Database+List&widget_height=250&widget_width=100%25&widget_link_color=2954d1&widget_embed_type=1&num_results=0&enable_more_results=0&window_target=2&config_id=1485193794129"+insert;
+                  fjs.parentNode.insertBefore(js,fjs);
+                  }
+              }
+              
+              (document,"script","s-lg-widget-script-1485193794129");
+
+          </script>
+
+    <!--- END ADDITIONAL LIMITER SCRIPTING --->
+
+
+    <!--- Hidden 'no results' text when search successful --->
+
+      <div id="s-lg-widget-list-info" style="display: none;">
+          <i>No results match the request.</i>
+      </div>
+
+
+  <!--- BEGIN LOAD CHECK --->
+
+  <!--- Addresses problem of scripts firing before widget fully loaded --->
+
+  <script>
+
+      if (alph !== ''){
+          window.addEventListener("load", pageFullyLoaded, false);
+      }
+      
+
+      function pageFullyLoaded() {
+          // Hides database listings that are not links.
+          $('li', $('#s-lg-widget-1485193794129')).each(function () {
+              if ($(this).text().substring(0,1) !== alph){
+                  $(this).css('display', 'none');
+              };
+              
+              if ($(this).text().substring(0,1) == alph){
+                  dbcount = dbcount +1;
+              };            
+          });   
+          $('#kwdisplay').html(alph);
+          $('#showlimiter p').text("Databases beginning with '" + alph + "'");
+          $( '#showlimiter' ).css( "display", "inline" );
+          //alert(dbcount);
+          
+          if (dbcount === 0){
+              $('#s-lg-widget-list-info').css("display", "inline");
+          }
+      };
+  </script>
+
+  <!--- END LOAD CHECK --->
+
+    <!--- BEGIN TOP OF PAGE BUTTON --->
+
+          <a href="#" class="scrollToTop" title="Return to Top">Top</a>
+
+          <style>
+              .scrollToTop{display: none; position: fixed; bottom: 50%; right: 10px; z-index: 99; border: none; outline: none; background-color: transparent; color: #FFA500; font-size: 8pt; font-weight: bold; cursor: pointer; padding: 15px; border-radius: 10px; border: 5px solid #FFA500; text-decoration: none; height: 50px; width: 50px; padding-left: 0px; padding-right: 0px; text-align: center;}
+              .scrollToTop:hover{border-color: #B27300; color: #B27300;}
+          </style>
+
+
+    <!--- BEGIN TOP OF PAGE BUTTON SCRIPT --->
+
+          <script>
+              $(document).ready(function(){
+              
+              //Check to see if the window is top if not then display button
+          	$(window).scroll(function(){
+                  var maxht = $(document).height() - 1400;
+                  
+                  //alert(maxht);
+                  
+          		if (($(this).scrollTop() > 100)) {
+          			if(($(this).scrollTop() < maxht)) {
+                          $('.scrollToTop').fadeIn();
+          			} else {
+              		    $('.scrollToTop').fadeOut();
+          			}
+                  } else {
+          			$('.scrollToTop').fadeOut();
+          		}
+          	});
+
+
+          	//Click event to scroll to top
+          	$('.scrollToTop').click(function(){
+          		$('html, body').animate({scrollTop : 0},800);
+          		return false;
+          	});
+          	
+          });
+
+          </script>
+
+    <!--- END TOP OF PAGE BUTTON BUTTON SCRIPT --->
+
+    <!--- END TOP OF PAGE BUTTON BUTTON --->
