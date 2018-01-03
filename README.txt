@@ -2,6 +2,7 @@ LibGuides/SpringShare A-Z List widget customization
 
 Updated 1/2/2018
 Please report any bugs to Tony Joachim (joachima1@wpunj.edu)
+http://www.wpunj.edu/library/databases.html
 
 In an effort to more seamlessly use the SpringShare (LibGuides, LibCal, etc.) widgets on our dotCMS site, Hao Zeng (hao.zeng@yu.edu) and I worked on the functionality and styling of the A-Z widget to fit the look of the University pages.
 
